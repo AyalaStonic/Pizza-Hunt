@@ -1,4 +1,8 @@
 const { Comment, Pizza } = require('../models');
+const router = require('express').Router();
+const { addComment, removeComment } = require('../../controllers/comment-controller');
+
+module.exports = router;
 
 const commentController = {
     // add comment to pizza
@@ -20,6 +24,7 @@ const commentController = {
             res.json(dbPizzaData);
           })
           .catch(err => res.json(err));
+                
       }
 };
 
@@ -45,6 +50,9 @@ const commentController = {
         res.json(dbPizzaData);
       })
       .catch(err => res.json(err));
+      
   };
 
+
+  
 module.exports = commentController;
